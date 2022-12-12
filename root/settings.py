@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'courses',
     'home',
     'teachers',
+    'subscribe',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'e0cdca1f0fa709'
+EMAIL_HOST_PASSWORD = '3f4fece7cb9f68'
+EMAIL_PORT = '2525'

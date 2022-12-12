@@ -1,0 +1,40 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+{% load static %}
+        <div class="site-section ftco-subscribe site-blocks-cover pb-4" style="background-image: url({% static 'images/bg_1.jpg' %})">
+             <div class="container">
+                 <div class="col-lg-7">
+                     <h2 class="mb-0"  style="color: CadetBlue">{{ page_title }}</h2>
+                     <p  style="color: darkcyan">{{ n.name }} - {{ n.date }}</p>
+                 </div>
+             </div>
+        </div>
+        <div id="breadcrumb" class="custom-breadcrumns border-bottom">
+            <div class="container">
+                <a href="/home/news">Новини</a>
+                <span class="mx-3 icon-keyboard_arrow_right"></span>
+                <span class="current">{{ n.topic }}</span>
+            </div>
+        </div>
+        <div class=section">
+            <div class="container">
+                <div>
+                    <div class="site-section">
+                        <div class="container">
+                            <div class="row justify-content-center">
+
+                                <div class="col-md-9 mb-4">
+                                    <p class="mb-5">
+                                        <img src="/media/{{ n.photo }}" alt="Image" class="img-fluid">
+                                    </p>
+                                    <p>{{ n.text }}</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}

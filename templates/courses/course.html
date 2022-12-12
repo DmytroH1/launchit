@@ -1,0 +1,100 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+{% load static %}
+        <div class="site-section ftco-subscribe site-blocks-cover pb-4" style="background-image: url({% static 'images/bg_1.jpg' %})">
+             <div class="container">
+                  <div class="row align-items-end">
+                      <div class="col-lg-7">
+                          <h2 class="mb-0" style="color: CadetBlue">{{ page_title }}</h2>
+                          <p style="color: DarkCyan">Тут інформація про обраний курс</p>
+                      </div>
+                  </div>
+             </div>
+        </div>
+        <div id="breadcrumb" class="custom-breadcrumns border-bottom">
+            <div class="container">
+                <a href="/courses/index">Курси</a>
+                <span class="mx-3 icon-keyboard_arrow_right"></span>
+                <span class="current">{{ course.name }}</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="site-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <p>
+                                <img src="/media/{{ course.photo }}" width="700px" alt="Image" class="img-fluid">
+                            </p>
+                            <br>
+                            <a href="/courses/studentsform" class="btn btn-outline-info btn-lg px-5">Подати заявку</a>
+                            <a href="#" class="button open-popup btn btn-outline-dark btn-lg px-5">Інформація</a>
+                        </div>
+                        <div class="col-lg-5 ml-auto align-self-center">
+                            <h2 class="section-title-underline mb-5"><span>Деталі</span></h2>
+                            <ul class="ul-check primary list-unstyled mb-5">
+                                <li><strong class="text-black d-block">Направлення:</strong>{{ course.category }}</li>
+                                <li><strong class="text-black d-block">Кількість годин:</strong> 180(1 рік)</li>
+                                <li><strong class="text-black d-block">Вартість навчання:</strong>{{ course.price }} грн. за місяць навчання</li>
+                                <li><strong class="text-black d-block">Кількість занять на тиждень:</strong> 4 пари(2 дні на тиждень з 18 до 21 год)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <p>
+                        {{ course.text }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="bottom-block"></div>
+
+        <div class="popup-bg">
+            <div class="popup">
+                <img class="close-popup" src="{% static 'images/close.png' %}" alt="icon">
+                <p style="color: black; text-align: center;"><b>Під час пошуку IT-школи, де пропонується такий курс, який вас цікавить, зверніть увагу на її сайт. Він повинен бути красивим і свідчити про рівень навчального закладу, до якого ви хочете звернутися для вивчення веброзробки. Якщо бачите на порталі будь-які неточності, помилки, задумайтеся, чи хочете ви вчитися в школі, яка навіть не може створити собі гарний сайт.</b></p>
+
+            </div>
+        </div>
+
+
+        <style>
+            .popup-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            }
+            .popup {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 600px;
+                background: white;
+                padding: 20px;
+                transform: translate(-50%, -50%);
+                padding-top: 60px;
+            }
+            .close-popup {
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                cursor: pointer;
+            }
+
+            .no-scroll {
+            overflow-y: hidden;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <script src="{% static 'js/course.js' %}"></script>
+
+{% endblock content %}

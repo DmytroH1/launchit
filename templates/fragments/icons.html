@@ -3,15 +3,30 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-9 d-none d-lg-block">
-                <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Маєте запитання?</a>
+                <a href="/home/contacts" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Маєте запитання?</a>
                 <a href="#" class="small mr-3"><span class="icon-phone2 mr-2"></span> +10 20 123 456</a>
                 <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> info@mydomain.com</a>
             </div>
-            <div class="col-lg-9-right d-none d-lg-block">
-                <a href="#" class="small mr-3">Привіт, Гість!</a>
-                <a href="login.html" class="small mr-3"><span class="icon-unlock-alt mr-2"></span>Вхід</a>
-                <a href="register.html" class="small mr-3"><span class="icon-users mr-2"></span>Реєстрація</a>
+            <div class="d-none d-lg-block row align-items-right">
+                <a href="#" class="small mr-4">
+                    Привіт,
+                    {% if user.is_authenticated %}
+                        <span style="color: red">
+                            {{ user.username }}
+                        </span>
+                    {% else %}
+                        <span style="color: blue">Гість</span>
+                    {% endif %}
+                </a>
+            {% if not user.is_authenticated %}
+                <a href="/account/entry" class="small mr-2"><span class="icon-unlock-alt mr-2"></span>Вхід</a>
+                <a href="/account/registration" class="small mr-2"><span class="icon-users mr-2"></span>Реєстрація</a>
+            {% else %}
+                <a href="/account/out" class="small mr-2"><span class="icon-unlock-alt mr-2"></span>Вихід</a>
+                <a href="/account/profile" class="small mr-2"><span class="icon-users mr-2"></span>Профіль</a>
+            {% endif %}
             </div>
         </div>
     </div>
 </div>
+

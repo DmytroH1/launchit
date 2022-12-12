@@ -4,11 +4,12 @@
         <div class="row align-items-center">
             <div class="col-lg-7">
                 <h2>Підписуйтесь на нас!</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,</p>
+                <p>Після того як ви введете Вашу пошту і нажмете Відправити, на Вашу пошту будуть приходити новини і цікаві статті з нашого сайту!</p>
             </div>
             <div class="col-lg-5">
-                <form action="" class="d-flex">
-                    <input type="text" class="rounded form-control mr-2 py-3" placeholder="Введіть Вашу Пошту...">
+                <form action="{% url 'subscribe' %}" method="POST" class="d-flex">
+                    {% csrf_token %}
+                    <input name="email" type="text" class="rounded form-control mr-2 py-3" placeholder="Введіть Вашу Пошту..." required>
                     <button class="btn btn-primary rounded py-3 px-4" type="submit">Відправити</button>
                 </form>
             </div>

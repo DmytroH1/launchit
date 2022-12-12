@@ -2,28 +2,106 @@
 
 {% block content %}
 {% load static %}
-        <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url({% static 'images/bg_1.jpg' %})">
+        <div class="site-section ftco-subscribe site-blocks-cover pb-4" style="background-image: url({% static 'images/bg_1.jpg' %})">
              <div class="container">
                   <div class="row align-items-end">
                       <div class="col-lg-7">
-                          <h2 class="mb-0">{{ page_title }}</h2>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                          <h2 class="mb-0" style="color: CadetBlue">{{ page_title }}</h2>
+                          <p style="color: darkcyan">Тут знаходиться цікаве</p>
                       </div>
                   </div>
              </div>
         </div>
         <div id="breadcrumb" class="custom-breadcrumns border-bottom">
             <div class="container">
-                <a href="/home">Home</a>
+                <a href="/">Головна</a>
                 <span class="mx-3 icon-keyboard_arrow_right"></span>
-                <span class="current">News</span>
+                <span class="current">Новини</span>
             </div>
         </div>
         <div class=section">
             <div class="container">
-                <div>
-                    <h3 style="color: darkcyan">Контент сторінки Новин</h3>
-                </div>
+                    <div class="news-updates">
+                        <div class="container">
+
+                            <div class="section-heading">
+                                <h2 class="text-black">Новини & цікаві теми</h2>
+                            </div>
+                            <br>
+                            <div class="row">
+                                {% for n in paginate_news %}
+                                    <div class="col-lg-4 col-md-6 mb-4">
+                                        <div class="post-entry-big">
+                                            <a href="/{{ n.url }}/" class="img-link"><img src="/media/{{ n.photo }}" width="350" height="300" alt="Image" class="img-fluid"></a>
+                                            <div class="post-content">
+                                                <div class="post-meta">
+                                                    <a href="#">{{ n.date }}</a>
+                                                    <span class="mx-1"></span>
+                                                    <a href="#">{{ n.name }}</a>
+                                                </div>
+                                                <h3 class="post-heading"><a href="/home/{{ n.url }}/">{{ n.topic }}</a></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="news-filter clearfix">
+                                <div class="wrap-pagination-info">
+                                    <div class="pagination my-paginator">
+                                        <span class="step-links">
+                                            {% if paginate_news.has_previous %}
+                                                <a class="green" href="?page=1">&laquo; Перша</a>
+                                                <a class="green"
+                                                   href="?page={{ paginate_news.previous_page_number }}">
+                                                    Попередня
+                                                </a>
+                                            {% endif %}
+
+                                            <span class="current">
+                                                Сторінка {{ paginate_news.number }} із
+                                                {{ paginate_news.paginator.num_pages }}
+                                            </span>
+
+                                            {% if paginate_news.has_next %}
+                                                <a class="red"
+                                                   href="?page={{ paginate_news.next_page_number }}">
+                                                    Наступна
+                                                </a>
+                                                <a class="red"
+                                                   href="?page={{ paginate_news.paginator.num_pages }}">
+                                                    Остання &raquo;
+                                                </a>
+                                            {% endif %}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
+        <style>
+            .my-paginator a {
+                font-size: 11pt;
+            }
+            .my-paginator .current {
+                font-size: 12pt;
+                font-weight: bold;
+                color: navy;
+            }
+            .my-paginator .green {
+                color: green;
+                padding-right: 10px;
+            }
+            .my-paginator .green:hover {
+                color: red;
+            }
+            .my-paginator .red {
+                color: red;
+                padding-right: 10px;
+            }
+            .my-paginator .green:hover {
+                color: green;
+            }
+        </style>
 {% endblock content %}

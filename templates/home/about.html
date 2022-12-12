@@ -2,28 +2,185 @@
 
 {% block content %}
 {% load static %}
-        <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url({% static 'images/bg_1.jpg' %})">
+        <div class="site-section ftco-subscribe site-blocks-cover pb-4" style="background-image: url({% static 'images/bg_1.jpg' %})">
              <div class="container">
                   <div class="row align-items-end">
                       <div class="col-lg-7">
-                          <h2 class="mb-0">{{ page_title }}</h2>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                          <h2 class="mb-0" style="color: CadetBlue">{{ page_title }}</h2>
+                          <p style="color: DarkCyan">Тут інформація про нас і нашу місію</p>
                       </div>
                   </div>
              </div>
         </div>
         <div id="breadcrumb" class="custom-breadcrumns border-bottom">
             <div class="container">
-                <a href="/home">Home</a>
+                <a href="/home">Головна</a>
                 <span class="mx-3 icon-keyboard_arrow_right"></span>
-                <span class="current">About</span>
+                <span class="current">Про Нас</span>
             </div>
         </div>
-        <div class=section">
+        <div class="section-bg style-1" style="background-image: url({% static 'images/about_1.jpg');">
             <div class="container">
-                <div>
-                    <h3 style="color: darkcyan">Контент сторінки Про Сайт</h3>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h2 class="section-title-underline style-2">
+                            <span>Про Нашу Академію</span>
+                        </h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <p class="lead">LaunchIT Academy - це велика дружня сім'я в світі IT. І як справжня сім'я ми з радістю підтримаємо тебе а також покажемо тобі, що нам можна довіряти.</p>
+                        <p class="lead">Ми допомагаємо людям перейти на новий кар'єрний рівень, а також здобути роботу мрії навіть без будь яких знань у сфері IT. Ми викладаємо ІТ-курси в сімейній атмосфері й піклуємося про кожного студента.</p>
+                        <p><a href="#">Читати більше про нашу Академію</a></p>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="container pt-5 mb-5">
+            <div class="row">
+              <div class="col-lg-4">
+                <h2 class="section-title-underline">
+                  <span>Місія нашої Академії</span>
+                </h2>
+              </div>
+              <br>
+              <h2 class="section-title-underline col-lg-7">
+                <p><b>Допомагати людям розвиватися та акліматизовуватися в галузі ІТ та впливати на соціально-економічний розвиток України.</b></p>
+              </h2>
+            </div>
+          </div> -->
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-6 mb-lg-0 mb-4">
+                    <img src="{% static 'images/team.jpg' %}"  style="box-shadow: 1em 0 .4em grey;" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-lg-5 ml-auto align-self-center">
+                    <h2 class="section-title-underline mb-5">
+                        <span>Наша команда</span>
+                    </h2>
+                    <p><b>Ми пишаємося тим, що нам вдалося зібрати у LaunchIT найкращих викладачів з України а також з Европейських країн.</b></p>
+                    <p><b>Всі ці люди мають не тільки теоритичні знання, а також реальний досвід роботи у IT компаніях. Завдяки цьому наші студенти швидше акліматизуються в розуміння процесу програмування.</b></p>
+                    <a href="/teachers/index" class="btn btn-outline-info btn-lg px-5">Наші викладачі</a>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-bg style-1" style="background-image: url({% static 'images/hero_1.jpg' %});">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+              <span class="icon flaticon-mortarboard"></span>
+              <h3>Наша Філософія</h3>
+              <p>В LaunchIT Academy ми все робимо власним шляхом. Наша культура визначає те, як і з ким ми працюємо. Цей підхід можна відобразити в певних цінностях і моделях, які допомагають нам досягати мети.</p>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+              <span class="icon flaticon-school-material"></span>
+              <h3>Наші результати</h3>
+              <p>Більше 20000 тисяч випускників за 20 років 500+ компаній де працюють наші студенти  70% наших випускників - були світчерами Більше ніж 700 випускників працюють в США, Канаді та Европі</p>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+              <span class="icon flaticon-library"></span>
+              <h3>Ключ до успіху</h3>
+              <p>Викладач стає твоїм ментором і колегою, а ти так само спілкуватимешся із одногрупниками. Парадигма освіти змінюється і ми намагаємося якнайраніше адаптуватися до змін.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-4">
+                    <h2 class="section-title-underline">
+                        <span>Відгуки</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="owl-slide owl-carousel">
+
+                <div class="ftco-testimonial-1">
+                    <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+                        <img src="{% static 'images/p_1.jpg' %}" alt="Image" class="img-fluid mr-3">
+                        <div>
+                            <h3>Андрій Родіон(New Generation Company)</h3>
+                            <span>Python Developer</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p> <b>&ldquo;Починав навання в 32 роки. Вибрав Пайтон тому що багато читав відгуків, що саме Пайтон одна з найперспективніших мов.Навчався рік, після закінчення влаштувався в компанію де і зараз працюю.&rdquo;</b></p>
+                    </div>
+                </div>
+
+                <div class="ftco-testimonial-1">
+                    <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+                        <img src="{% static 'images/p_2.jpg' %}" alt="Image" class="img-fluid mr-3">
+                        <div>
+                           <h3>Марічка Мірна(BerlinBrainCo)</h3>
+                           <span>Web Designer</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p><b>&ldquo;Почала задумуватися про кар'єру в IT на останньому курсі Університету, але боялася втратити 5 років навчання. Але порадившись з батьками відіслала заявку. Після першого місяця думала покинути навчання на WEB Design, добре що передумала. Зараз живу в Німеччині працюю в IT компанії в Берліні.&ldquo;</b></p>
+                    </div>
+                </div>
+
+                <div class="ftco-testimonial-1">
+                    <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+                        <img src="{% static 'images/p_6.jpg' %}" alt="Image" class="img-fluid mr-3">
+                        <div>
+                            <h3>Віктор Кузякін(Grainer)</h3>
+                            <span>Manual QA Engineer</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p><b>&ldquo;Дякую LaunchIT за те, що ви є! Мені зараз 54 роки і я почав навчатись в 49. Через 5 місяців навчання пішов Джуном в Grainer. Зараз працюю і вже є Мідлом.&rdquo;</b></p>
+                    </div>
+                </div>
+
+                <div class="ftco-testimonial-1">
+                    <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+                        <img src="{% static 'images/p_3.jpg' %}" alt="Image" class="img-fluid mr-3">
+                        <div>
+                            <h3>Дмитро Протасов</h3>
+                            <span>Designer</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p><b>&ldquo;Почав вчити в LaunchIT C++. Та через 3 місяці вирішив перезаписатись на ДжаваСкрипт. Задоволений доступністю і простотою пояснень від викладачів. Зараз роблю фінальний проєкт і планую працювати в IT&ldquo;</b></p>
+                    </div>
+                </div>
+
+                <div class="ftco-testimonial-1">
+                    <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+                        <img src="{% static 'images/p_4.jpg' %}" alt="Image" class="img-fluid mr-3">
+                        <div>
+                            <h3>Валерій Рибак(TestoCrunch)</h3>
+                            <span>QA Atomation</span>
+                        </div>
+                    </div>
+                    <div>
+                      <p><b>&ldquo;Закінчив курси QA Automation Python. Велике дякую Олексію Олексійовичу за знання і терпіння. Працюю пів року, взяли на роботу після першої співбесіди.&rdquo;</b></p>
+                    </div>
+                </div>
+                <div class="ftco-testimonial-1">
+                    <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+                        <img src="{% static 'images/p_5.jpg' %}" alt="Image" class="img-fluid mr-3">
+                        <div>
+                            <h3>Анжела Волох(PariMatch)</h3>
+                            <span>Java Developer</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p><b>&ldquo;Коли починала вчитись думала, що у програмуванні тільки для математиків і заучок. Після курсу займалася з ментором окремо. Через 2 місяця пройшла співбесіду в PariMatch.&ldquo;</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 {% endblock content %}
